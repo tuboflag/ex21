@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  my_runner:
+    restart: unless-stopped
+    image: myoung34/github-runner
+    environment:
+      RUNNER_NAME: obd01-runner
+      RUNNER_SCOPE: repo
+      REPO_URL: https://github.com/tuboflag/hello-world
+      LABELS: obd-runner
+      ACCESS_TOKEN: 
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
